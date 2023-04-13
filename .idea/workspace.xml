@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a6b32d2-2e56-4e16-848c-71ba1c95d63e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sokoban.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MapCreator.java" afterDir="false" />
+    <list default="true" id="0a6b32d2-2e56-4e16-848c-71ba1c95d63e" name="Changes" comment="Pridany enum, abstract, metody move">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inputs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LevelObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MapCreator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Move.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
+        <option value="XML Properties File" />
         <option value="Class" />
       </list>
     </option>
@@ -39,16 +38,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/MIchalPC/Desktop/SokobanGame-master&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Program Files\Projekty\Sokoban\src\main" />
+      <recent name="C:\Program Files\Projekty\Sokoban\src\main\resources" />
+      <recent name="C:\Program Files\Projekty\Sokoban\src\main\sk\pavlovsky\sokoban" />
+      <recent name="C:\Program Files\Projekty\Sokoban\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.sk.pavlovsky.sokoban.Game" />
+      <module name="Sokoban" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="main.sk.pavlovsky.sokoban.Main" />
       <module name="Sokoban" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -57,6 +72,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Game" />
       </list>
     </recent_temporary>
   </component>
@@ -69,6 +85,34 @@
       <option name="presentableId" value="Default" />
       <updated>1680879788551</updated>
     </task>
+    <task id="LOCAL-00001" summary="Vypisanie levelu">
+      <created>1680959309785</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680959309785</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Prvy tah po inpute">
+      <created>1680980195407</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680980195407</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Pridany enum, abstract, metody move">
+      <created>1681161445801</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681161445801</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Vypisanie levelu" />
+    <MESSAGE value="Prvy tah po inpute" />
+    <MESSAGE value="Pridany enum, abstract, metody move" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pridany enum, abstract, metody move" />
   </component>
 </project>
