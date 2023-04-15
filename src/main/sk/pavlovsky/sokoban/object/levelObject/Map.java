@@ -1,10 +1,9 @@
-package main.sk.pavlovsky.sokoban;
+package main.sk.pavlovsky.sokoban.object.levelObject;
 
 
-import main.sk.pavlovsky.sokoban.levelActor.Box;
-import main.sk.pavlovsky.sokoban.levelActor.Player;
-import main.sk.pavlovsky.sokoban.levelObject.Empty;
-import main.sk.pavlovsky.sokoban.levelObject.Goal;
+import main.sk.pavlovsky.sokoban.utils.MapFactory;
+import main.sk.pavlovsky.sokoban.object.levelActor.Box;
+import main.sk.pavlovsky.sokoban.object.levelActor.Player;
 
 import java.util.ArrayList;
 

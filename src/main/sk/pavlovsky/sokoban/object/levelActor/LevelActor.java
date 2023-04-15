@@ -1,4 +1,4 @@
-package main.sk.pavlovsky.sokoban;
+package main.sk.pavlovsky.sokoban.object.levelActor;
 
 public class LevelActor {
     private int x,y;

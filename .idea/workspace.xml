@@ -4,13 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a6b32d2-2e56-4e16-848c-71ba1c95d63e" name="Changes" comment="Pridany enum, abstract, metody move">
+    <list default="true" id="0a6b32d2-2e56-4e16-848c-71ba1c95d63e" name="Changes" comment="Render level from File to console">
+      <change afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Inputs/ConsoleDirection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Moving.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Inputs.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LevelObject.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MapCreator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Move.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Inputs/Direction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/LevelActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/object/levelActor/LevelActor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/LevelObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/object/levelObject/LevelObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/LoaderLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/utils/LoaderLevel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/object/levelObject/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/MapFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/utils/MapFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/levelActor/Box.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/object/levelActor/Box.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/levelActor/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/object/levelActor/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/levelObject/Empty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/object/levelObject/Empty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/levelObject/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/levelObject/Goal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/object/levelObject/Goal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/levelObject/ReachGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/object/levelObject/ReachGoal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/levelObject/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/object/levelObject/Wall.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +42,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -106,13 +127,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681161445801</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Render level from File to console">
+      <created>1681381715961</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681381715961</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Vypisanie levelu" />
     <MESSAGE value="Prvy tah po inpute" />
     <MESSAGE value="Pridany enum, abstract, metody move" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pridany enum, abstract, metody move" />
+    <MESSAGE value="Render level from File to console" />
+    <option name="LAST_COMMIT_MESSAGE" value="Render level from File to console" />
   </component>
 </project>

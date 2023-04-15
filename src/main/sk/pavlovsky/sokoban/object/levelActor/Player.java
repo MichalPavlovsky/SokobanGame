@@ -1,6 +1,4 @@
-package main.sk.pavlovsky.sokoban.levelActor;
-
-import main.sk.pavlovsky.sokoban.LevelActor;
+package main.sk.pavlovsky.sokoban.object.levelActor;
 
 public class Player extends LevelActor {
     @Override

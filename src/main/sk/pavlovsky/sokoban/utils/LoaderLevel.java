@@ -1,6 +1,7 @@
-package main.sk.pavlovsky.sokoban;
+package main.sk.pavlovsky.sokoban.utils;
 
-import main.sk.pavlovsky.sokoban.levelObject.Empty;
+import main.sk.pavlovsky.sokoban.object.levelObject.Empty;
+import main.sk.pavlovsky.sokoban.object.levelObject.Map;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -14,7 +15,7 @@ public class LoaderLevel {
         this.rawLevels = new ArrayList<>(); // aky je rozdiel medzi tymto konstruktorom a klasicky cez insert?
     }
 
-    public ArrayList<Map> loadLevels(String path) {
+    public ArrayList<main.sk.pavlovsky.sokoban.object.levelObject.Map> loadLevels(String path) {
         try (BufferedReader reader = new BufferedReader(new FileReader("src/main/" + path))) {
             String line = reader.readLine();
             ArrayList<String> level = new ArrayList<>();
@@ -36,18 +37,18 @@ public class LoaderLevel {
         }
 
 
-        ArrayList<Map> levels = new ArrayList<>();
+        ArrayList<main.sk.pavlovsky.sokoban.object.levelObject.Map> levels = new ArrayList<>();
         for (ArrayList<String> l : this.rawLevels) {
             levels.add(parseLevel(l));
         }
         return levels;
     }
 
-    private Map parseLevel(ArrayList<String> raw) {
+    private main.sk.pavlovsky.sokoban.object.levelObject.Map parseLevel(ArrayList<String> raw) {
         Optional<String> maxSize = raw.stream().max(Comparator.comparingInt(String::length));
         if (!maxSize.isPresent()) throw new RuntimeException("Unknown max value");
         MapFactory factory = new MapFactory();
-        Map map = new Map(maxSize.get().length(),raw.size());
+        main.sk.pavlovsky.sokoban.object.levelObject.Map map = new Map(maxSize.get().length(),raw.size());
 
         for (int y = 0; y < raw.size(); y++) {
             for (int x = 0; x < maxSize.get().length(); x++) {

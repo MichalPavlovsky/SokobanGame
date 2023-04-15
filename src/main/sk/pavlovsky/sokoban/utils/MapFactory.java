@@ -1,11 +1,6 @@
-package main.sk.pavlovsky.sokoban;
+package main.sk.pavlovsky.sokoban.utils;
 
-import main.sk.pavlovsky.sokoban.levelObject.Empty;
-import main.sk.pavlovsky.sokoban.levelObject.Goal;
-import main.sk.pavlovsky.sokoban.levelObject.ReachGoal;
-import main.sk.pavlovsky.sokoban.levelObject.Wall;
-
-import java.util.logging.Level;
+import main.sk.pavlovsky.sokoban.object.levelObject.*;
 
 public class MapFactory {
     public LevelObject fromInputFile(char c) {
