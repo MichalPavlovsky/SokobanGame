@@ -22,6 +22,7 @@ public class Game {
         if (size>maps.size()) throw new RuntimeException("Inccorect index of map");
         return maps.get(size);
     }
+    public int number=0;
     public void loop(){
         while(running){
             render();
@@ -32,7 +33,7 @@ public class Game {
 
     public void start(){
         this.running=true;
-        this.activeMap=maps.get(0);
+        this.activeMap=maps.get(number);
         loop();
     }
 
@@ -40,6 +41,7 @@ public class Game {
     private void update(Direction direction) {
         switch (direction) {
             case QUIT :this.running = false;
+            case NEXT: this.activeMap = maps.get(number+1);
             case UP : move(0, -1); break;
             case DOWN :  move(0,1); break;
             case LEFT : move(-1,0); break;
@@ -74,6 +76,11 @@ public class Game {
         return ConsoleDirection.getDirection();
     }
     private void render() {
+        String win = this.activeMap.toString();
+        if (!win.contains("o")) {
+            System.out.println("Skvele!");
+            System.out.println("For next level push n");
+        }
         System.out.println(this.activeMap.toString());
     }
 }
