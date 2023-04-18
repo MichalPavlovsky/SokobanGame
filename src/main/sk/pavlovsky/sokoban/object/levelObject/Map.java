@@ -6,6 +6,9 @@ import main.sk.pavlovsky.sokoban.object.levelActor.Box;
 import main.sk.pavlovsky.sokoban.object.levelActor.Player;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Map {
 
@@ -20,6 +23,9 @@ public class Map {
         this.width=width;
         this.map= new LevelObject[height][width];
         this.boxes=new ArrayList<>();
+    }
+    public List<String> toList() {
+        return Arrays.stream(toString().split("\n")).collect(Collectors.toList());
     }
 
     @Override

@@ -1,16 +1,22 @@
 package main.sk.pavlovsky.sokoban;
 
+import com.googlecode.lanterna.TextCharacter;
+import com.googlecode.lanterna.screen.Screen;
 import main.sk.pavlovsky.sokoban.Inputs.ConsoleDirection;
+import main.sk.pavlovsky.sokoban.Inputs.WindowInput;
 import main.sk.pavlovsky.sokoban.object.levelActor.Box;
 import main.sk.pavlovsky.sokoban.object.levelObject.Map;
 import main.sk.pavlovsky.sokoban.Inputs.Direction;
 import main.sk.pavlovsky.sokoban.object.levelObject.Wall;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 
 public class Game {
+    private Screen screen;
     private ArrayList<Map> maps;
     private boolean running=false;
     private Map activeMap;
@@ -31,9 +37,10 @@ public class Game {
         }
     }
 
-    public void start(){
+    public void start(Screen screen){
         this.running=true;
-        this.activeMap=maps.get(number);
+        this.activeMap=maps.get(0);
+        this.screen =screen;
         loop();
     }
 
@@ -73,14 +80,27 @@ public class Game {
         this.activeMap.getPlayer().move(dx,dy);
     }
     private Direction input() {
-        return ConsoleDirection.getDirection();
+//        return ConsoleDirection.getDirection();
+        return WindowInput.getInput(this.screen);
     }
     private void render() {
-        String win = this.activeMap.toString();
-        if (!win.contains("o")) {
-            System.out.println("Skvele!");
-            System.out.println("For next level push n");
+        renderMap();
+        try {
+            this.screen.refresh();
+        }catch(IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException("It is not possible to render. ");
         }
-        System.out.println(this.activeMap.toString());
+    }
+    private void renderMap() {
+        List<String> list = activeMap.toList();
+        int xOff = 5;
+        int yOff = 5;
+        for (int y = 0; y < list.size(); y++) {
+            for (int x = 0; x < list.get(y).length(); x++) {
+                this.screen.setCharacter(x+xOff, y+yOff, new TextCharacter(list.get(y).charAt(x)));
+            }
+        }
+
     }
 }
