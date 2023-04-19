@@ -2,7 +2,6 @@ package main.sk.pavlovsky.sokoban;
 
 import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.screen.Screen;
-import main.sk.pavlovsky.sokoban.Inputs.ConsoleDirection;
 import main.sk.pavlovsky.sokoban.Inputs.WindowInput;
 import main.sk.pavlovsky.sokoban.object.levelActor.Box;
 import main.sk.pavlovsky.sokoban.object.levelObject.Map;
