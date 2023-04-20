@@ -4,6 +4,7 @@ import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.screen.Screen;
 import main.sk.pavlovsky.sokoban.Inputs.WindowInput;
 import main.sk.pavlovsky.sokoban.object.levelActor.Box;
+import main.sk.pavlovsky.sokoban.object.levelObject.Goal;
 import main.sk.pavlovsky.sokoban.object.levelObject.Map;
 import main.sk.pavlovsky.sokoban.Inputs.Direction;
 import main.sk.pavlovsky.sokoban.object.levelObject.Wall;
@@ -12,6 +13,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 
 public class Game {
@@ -84,6 +87,7 @@ public class Game {
     }
     private void render() {
         renderMap();
+        renderUI();
         try {
             this.screen.refresh();
         }catch(IOException e) {
@@ -101,5 +105,19 @@ public class Game {
             }
         }
 
+    }
+    private void renderUI() {
+        int steps = this.activeMap.getPlayer().getSteps();
+        TextCharacter[] textCharactersSteps = TextCharacter.fromString("Steps: " + Integer.toString(steps));
+        for (int i = 0; i < textCharactersSteps.length; i++) {
+            this.screen.setCharacter(2+i,2,textCharactersSteps[i]);
+        }
+        long boxesOnGoal = this.activeMap.getBoxes().stream()
+                .filter(box-> this.activeMap.getLevelObject(box.getX(), box.getY()) instanceof Goal).count();
+        TextCharacter[] textCharactersBoxes =  TextCharacter.fromString("Score: "+Long.toString(boxesOnGoal) + "/" +
+                Integer.toString(this.activeMap.getBoxes().size()));
+        for (int i = 0; i < textCharactersBoxes.length; i++) {
+            this.screen.setCharacter(15+i,2,textCharactersBoxes[i]);
+        }
     }
 }
