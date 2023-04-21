@@ -15,7 +15,7 @@ public class LoaderLevel {
         this.rawLevels = new ArrayList<>(); // aky je rozdiel medzi tymto konstruktorom a klasicky cez insert?
     }
 
-    public ArrayList<main.sk.pavlovsky.sokoban.object.levelObject.Map> loadLevels(String path) {
+    public LinkedList<Map> loadLevels(String path) {
         try (BufferedReader reader = new BufferedReader(new FileReader("src/main/" + path))) {
             String line = reader.readLine();
             ArrayList<String> level = new ArrayList<>();
@@ -37,7 +37,7 @@ public class LoaderLevel {
         }
 
 
-        ArrayList<main.sk.pavlovsky.sokoban.object.levelObject.Map> levels = new ArrayList<>();
+        LinkedList<Map> levels = new LinkedList<>();
         for (ArrayList<String> l : this.rawLevels) {
             levels.add(parseLevel(l));
         }
