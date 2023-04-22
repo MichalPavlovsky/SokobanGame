@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a6b32d2-2e56-4e16-848c-71ba1c95d63e" name="Changes" comment="add Score and Steps UI">
+    <list default="true" id="0a6b32d2-2e56-4e16-848c-71ba1c95d63e" name="Changes" comment="repair next level, LinkedList">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Inputs/WindowInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Inputs/WindowInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/utils/LoaderLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/utils/LoaderLevel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +44,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Program Files/Projekty/ULOHYpokrocile",
+    "last_opened_file_path": "C:/Users/MIchalPC/Desktop/Coll",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.7034483",
@@ -177,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681976117438</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="repair next level, LinkedList">
+      <created>1682112617656</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1682112617656</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -209,7 +213,8 @@
     <MESSAGE value="add test level" />
     <MESSAGE value="change read.me and delete useless import" />
     <MESSAGE value="add Score and Steps UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Score and Steps UI" />
+    <MESSAGE value="repair next level, LinkedList" />
+    <option name="LAST_COMMIT_MESSAGE" value="repair next level, LinkedList" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
