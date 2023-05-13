@@ -2,7 +2,7 @@ package main.sk.pavlovsky.sokoban;
 
 import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.screen.Screen;
-import main.sk.pavlovsky.sokoban.Inputs.WindowInput;
+import main.sk.pavlovsky.sokoban.Inputs.LanternaInput;
 import main.sk.pavlovsky.sokoban.object.levelActor.Box;
 import main.sk.pavlovsky.sokoban.object.levelObject.Goal;
 import main.sk.pavlovsky.sokoban.object.levelObject.Map;
@@ -103,7 +103,7 @@ public class Game {
     }
 
     private Direction input() {
-        return WindowInput.getInput(this.screen);
+        return LanternaInput.getInput(this.screen);
     }
 
     private void render() {

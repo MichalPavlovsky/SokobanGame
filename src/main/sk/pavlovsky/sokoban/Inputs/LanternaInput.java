@@ -8,10 +8,17 @@ import java.io.IOException;
 
 import static main.sk.pavlovsky.sokoban.Inputs.Direction.*;
 
-public class WindowInput {
+public class LanternaInput {
+
+    Screen screen;
+
+    public LanternaInput(Screen screen) {
+        this.screen = screen;
+    }
+
     public static Direction getInput(Screen screen){
-        try {
-            KeyStroke stroke = screen.readInput();
+        try {KeyStroke stroke = screen.readInput();
+            if (stroke == null || stroke.getCharacter() == null) return NONE;
             switch (stroke.getCharacter()) {
                 case 'n': return NEXT;
                 case 'w': return UP;

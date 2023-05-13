@@ -1,6 +1,6 @@
 package main.sk.pavlovsky.sokoban;
 
-import com.googlecode.lanterna.TextCharacter;
+
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;

@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Desktop/jar_files (1)/lanterna-3.1.1.jar!/" />
+          <root url="jar://$USER_HOME$/Desktop/jar_files/lanterna-3.1.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
