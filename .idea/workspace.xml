@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a6b32d2-2e56-4e16-848c-71ba1c95d63e" name="Changes" comment="ymena">
-      <change afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Inputs/Inputter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/render/Renderer.java" afterDir="false" />
+    <list default="true" id="0a6b32d2-2e56-4e16-848c-71ba1c95d63e" name="Changes" comment="push interfaces">
+      <change afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/render/LanternaRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sokoban.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Sokoban.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Inputs/ConsoleDirection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Inputs/WindowInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Inputs/LanternaInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +18,8 @@
       <list>
         <option value="Enum" />
         <option value="XML Properties File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -196,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682199114894</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="push interfaces">
+      <created>1684014733481</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684014733482</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -230,7 +231,8 @@
     <MESSAGE value="add Score and Steps UI" />
     <MESSAGE value="repair next level, LinkedList" />
     <MESSAGE value="ymena" />
-    <option name="LAST_COMMIT_MESSAGE" value="ymena" />
+    <MESSAGE value="push interfaces" />
+    <option name="LAST_COMMIT_MESSAGE" value="push interfaces" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
