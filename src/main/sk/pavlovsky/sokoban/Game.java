@@ -1,28 +1,39 @@
 package main.sk.pavlovsky.sokoban;
 
-import com.googlecode.lanterna.TextCharacter;
+
 import com.googlecode.lanterna.screen.Screen;
+import main.sk.pavlovsky.sokoban.Inputs.Inputter;
 import main.sk.pavlovsky.sokoban.Inputs.LanternaInput;
 import main.sk.pavlovsky.sokoban.object.levelActor.Box;
 import main.sk.pavlovsky.sokoban.object.levelObject.Goal;
 import main.sk.pavlovsky.sokoban.object.levelObject.Map;
 import main.sk.pavlovsky.sokoban.Inputs.Direction;
 import main.sk.pavlovsky.sokoban.object.levelObject.Wall;
+import main.sk.pavlovsky.sokoban.render.LanternaRenderer;
+import main.sk.pavlovsky.sokoban.render.Renderer;
 
-import java.io.IOException;
+
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Optional;
 
 
 public class Game {
     private Screen screen;
+    Renderer renderer;
+    Inputter inputter;
     private LinkedList<Map> maps;
     private boolean running = false;
     private Map activeMap;
 
+    public Map getActiveMap() {
+        return activeMap;
+    }
+
     public Game(LinkedList<Map> maps) {
+
         this.maps = maps;
+        renderer = new LanternaRenderer();
+        inputter = new LanternaInput(((LanternaRenderer)renderer).getScreen());
     }
 
     public Map getMap(int size) {
@@ -30,7 +41,6 @@ public class Game {
         return maps.get(size);
     }
 
-    public int number = 0;
 
     public void loop() {
         while (running) {
@@ -40,11 +50,12 @@ public class Game {
         }
     }
 
-    public void start(Screen screen) {
+    public void start() {
         this.running = true;
         this.activeMap = maps.pop();
-        this.screen = screen;
+        renderer.init();
         loop();
+        renderer.deinit();
     }
 
 
@@ -57,8 +68,7 @@ public class Game {
                     this.screen.clear();
                     this.activeMap = maps.pop();
                 }
-            }
-            break;
+            } break;
             case UP:
                 move(0, -1);
                 break;
@@ -102,54 +112,15 @@ public class Game {
         this.activeMap.getPlayer().addSteps(1);
     }
 
-    private Direction input() {
-        return LanternaInput.getInput(this.screen);
-    }
-
     private void render() {
-        renderMap();
-        renderUI();
-        try {
-            this.screen.refresh();
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException("It is not possible to render. ");
-        }
+        renderer.render(this);
     }
 
-    private void renderMap() {
-        List<String> list = activeMap.toList();
-        int xOff = 5;
-        int yOff = 5;
-        for (int y = 0; y < list.size(); y++) {
-            for (int x = 0; x < list.get(y).length(); x++) {
-                this.screen.setCharacter(x + xOff, y + yOff, new TextCharacter(list.get(y).charAt(x)));
-            }
-        }
-
+    private Direction input() {
+        return inputter.getInput();
     }
 
-    private void renderUI() {
-        int steps = this.activeMap.getPlayer().getSteps();
-        TextCharacter[] textCharactersSteps = TextCharacter.fromString("Steps: " + Integer.toString(steps));
-        for (int i = 0; i < textCharactersSteps.length; i++) {
-            this.screen.setCharacter(2 + i, 2, textCharactersSteps[i]);
-        }
-        long boxesOnGoal = this.activeMap.getBoxes().stream()
-                .filter(box -> this.activeMap.getLevelObject(box.getX(), box.getY()) instanceof Goal).count();
-        TextCharacter[] textCharactersBoxes = TextCharacter.fromString("Score: " + Long.toString(boxesOnGoal) + "/" +
-                Integer.toString(this.activeMap.getBoxes().size()));
-        for (int i = 0; i < textCharactersBoxes.length; i++) {
-            this.screen.setCharacter(15 + i, 2, textCharactersBoxes[i]);
-        }
-        if (isLevelFinished()) {
-            TextCharacter[] textCharactersSuccess = TextCharacter.fromString("Level completed, Press N to continue");
-            for (int i = 0; i< textCharactersSuccess.length; i++)
-                this.screen.setCharacter(2+i,3,textCharactersSuccess[i]);
-        }
-    }
-
-    private boolean isLevelFinished() {
+    public boolean isLevelFinished() {
         long onGoal = this.activeMap.getBoxes().stream()
                 .filter(it -> this.activeMap.getLevelObject(it.getX(), it.getY()) instanceof Goal).count();
         int goals = this.activeMap.getBoxes().size();

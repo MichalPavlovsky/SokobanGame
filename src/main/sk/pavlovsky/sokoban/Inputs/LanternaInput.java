@@ -8,7 +8,7 @@ import java.io.IOException;
 
 import static main.sk.pavlovsky.sokoban.Inputs.Direction.*;
 
-public class LanternaInput {
+public class LanternaInput implements Inputter{
 
     Screen screen;
 
@@ -16,7 +16,7 @@ public class LanternaInput {
         this.screen = screen;
     }
 
-    public static Direction getInput(Screen screen){
+    public Direction getInput(){
         try {KeyStroke stroke = screen.readInput();
             if (stroke == null || stroke.getCharacter() == null) return NONE;
             switch (stroke.getCharacter()) {
@@ -32,4 +32,5 @@ public class LanternaInput {
             throw new RuntimeException(e);
         }
     }
+
 }
