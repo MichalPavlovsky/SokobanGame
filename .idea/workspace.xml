@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a6b32d2-2e56-4e16-848c-71ba1c95d63e" name="Changes" comment="first Canvas">
+    <list default="true" id="0a6b32d2-2e56-4e16-848c-71ba1c95d63e" name="Changes" comment="Canvas input handle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/levelss.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/levelss.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Inputs/SwingInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Inputs/SwingInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/render/SwingRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/render/SwingRenderer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -228,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684154479610</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Canvas input handle">
+      <created>1684160213237</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1684160213237</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -267,7 +272,8 @@
     <MESSAGE value="set renderer and inputter to Game" />
     <MESSAGE value="deleted useless file and create new empty swing window" />
     <MESSAGE value="first Canvas" />
-    <option name="LAST_COMMIT_MESSAGE" value="first Canvas" />
+    <MESSAGE value="Canvas input handle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Canvas input handle" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

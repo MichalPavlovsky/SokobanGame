@@ -1,16 +1,12 @@
 package main.sk.pavlovsky.sokoban;
 
-
-import com.googlecode.lanterna.screen.Screen;
 import main.sk.pavlovsky.sokoban.Inputs.Inputter;
-import main.sk.pavlovsky.sokoban.Inputs.LanternaInput;
 import main.sk.pavlovsky.sokoban.Inputs.SwingInput;
 import main.sk.pavlovsky.sokoban.object.levelActor.Box;
 import main.sk.pavlovsky.sokoban.object.levelObject.Goal;
 import main.sk.pavlovsky.sokoban.object.levelObject.Map;
 import main.sk.pavlovsky.sokoban.Inputs.Direction;
 import main.sk.pavlovsky.sokoban.object.levelObject.Wall;
-import main.sk.pavlovsky.sokoban.render.LanternaRenderer;
 import main.sk.pavlovsky.sokoban.render.Renderer;
 import main.sk.pavlovsky.sokoban.render.SwingRenderer;
 

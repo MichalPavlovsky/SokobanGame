@@ -43,18 +43,24 @@ public class SwingRenderer implements Renderer{
         int yOff= 0;
         for (int y = 0; y < map.getHeight(); y++) {
             for (int x = 0; x < map.getWidth(); x++) {
-                gr.setColor(getColor(map.getLevelObject(x,y)));
-                gr.fillRect(x*size+xOff, y*size+yOff,size,size);
+                renderObject(gr, map, getColor(map.getLevelObject(x,y)), x,y,size,xOff,yOff);
             }
         }
         for (Box b:map.getBoxes()){
-            gr.setColor(Color.ORANGE);
-            gr.fillRect(b.getX()*size+xOff, b.getY()*size+yOff,size,size);
+            renderObject(gr, map, Color.ORANGE, b.getX(),b.getY(),size,xOff,yOff);
         }
         Player player = map.getPlayer();
-        gr.setColor(Color.WHITE);
-        gr.fillRect(player.getX()*size+xOff,player.getY()*size+yOff, size,size);
+        renderObject(gr, map, Color.WHITE, player.getX(), player.getY(), size,xOff,yOff);
         g.drawImage(bi,0,0,canvas);
+    }
+    private void renderObject(Graphics2D gr, Map map, Color color, int x, int y, int size, int xOff, int yOff){
+        gr.setColor(color);
+        gr.fillRect(x*size+xOff, y*size+yOff,size,size);
+        LevelObject levelObject = map.getLevelObject(x,y);
+        if (levelObject instanceof Goal) {
+            gr.setColor(color);
+            gr.fillRect(x*size+xOff+5,y*size+yOff+5, size - 10 ,size -10);
+        }
     }
 
     @Override
