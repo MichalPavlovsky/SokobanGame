@@ -15,7 +15,7 @@ public class SwingRenderer implements Renderer{
     private Graphics2D g;
     public SwingRenderer() {
         frame = new JFrame();
-        frame.setSize(640, 640);
+        frame.setSize(1280, 1280);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
@@ -35,10 +35,10 @@ public class SwingRenderer implements Renderer{
 
     @Override
     public void render(Game game) {
-        BufferedImage bi = new BufferedImage(640,640,BufferedImage.TYPE_INT_RGB);
+        BufferedImage bi = new BufferedImage(1280,1280,BufferedImage.TYPE_INT_RGB);
         Graphics2D gr = (Graphics2D) bi.getGraphics();
         Map map = game.getActiveMap();
-        int size = 32;
+        int size = 64;
         int xOff= 0;
         int yOff= 0;
         for (int y = 0; y < map.getHeight(); y++) {
@@ -58,7 +58,7 @@ public class SwingRenderer implements Renderer{
         gr.fillRect(x*size+xOff, y*size+yOff,size,size);
         LevelObject levelObject = map.getLevelObject(x,y);
         if (levelObject instanceof Goal) {
-            gr.setColor(color);
+            gr.setColor(getColor(levelObject));
             gr.fillRect(x*size+xOff+5,y*size+yOff+5, size - 10 ,size -10);
         }
     }
