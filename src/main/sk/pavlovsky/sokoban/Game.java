@@ -36,7 +36,8 @@ public class Game {
 //        renderer = new SwingRenderer();
 //        inputter = new LanternaInput(((LanternaRenderer)renderer).getScreen());
         renderer= new SwingRenderer();
-        inputter= new SwingInput();
+        inputter= new SwingInput(((SwingRenderer)renderer).getFrame());
+
     }
 
     public Map getMap(int size) {

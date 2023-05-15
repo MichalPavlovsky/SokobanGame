@@ -1,10 +1,13 @@
 package main.sk.pavlovsky.sokoban.render;
 
 import main.sk.pavlovsky.sokoban.Game;
+import main.sk.pavlovsky.sokoban.object.levelActor.Player;
 import main.sk.pavlovsky.sokoban.object.levelObject.*;
+import main.sk.pavlovsky.sokoban.object.levelActor.Box;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 public class SwingRenderer implements Renderer{
     private JFrame frame;
@@ -32,16 +35,26 @@ public class SwingRenderer implements Renderer{
 
     @Override
     public void render(Game game) {
+        BufferedImage bi = new BufferedImage(640,640,BufferedImage.TYPE_INT_RGB);
+        Graphics2D gr = (Graphics2D) bi.getGraphics();
         Map map = game.getActiveMap();
         int size = 32;
         int xOff= 0;
         int yOff= 0;
         for (int y = 0; y < map.getHeight(); y++) {
             for (int x = 0; x < map.getWidth(); x++) {
-                g.setColor(getColor(map.getLevelObject(x,y)));
-                g.fillRect(x*size+xOff, y*size+yOff,size,size);
+                gr.setColor(getColor(map.getLevelObject(x,y)));
+                gr.fillRect(x*size+xOff, y*size+yOff,size,size);
             }
         }
+        for (Box b:map.getBoxes()){
+            gr.setColor(Color.ORANGE);
+            gr.fillRect(b.getX()*size+xOff, b.getY()*size+yOff,size,size);
+        }
+        Player player = map.getPlayer();
+        gr.setColor(Color.WHITE);
+        gr.fillRect(player.getX()*size+xOff,player.getY()*size+yOff, size,size);
+        g.drawImage(bi,0,0,canvas);
     }
 
     @Override
@@ -58,4 +71,8 @@ public class SwingRenderer implements Renderer{
         }
         return Color.RED;
 }
+
+    public JFrame getFrame() {
+        return frame;
+    }
 }
