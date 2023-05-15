@@ -4,6 +4,7 @@ package main.sk.pavlovsky.sokoban;
 import com.googlecode.lanterna.screen.Screen;
 import main.sk.pavlovsky.sokoban.Inputs.Inputter;
 import main.sk.pavlovsky.sokoban.Inputs.LanternaInput;
+import main.sk.pavlovsky.sokoban.Inputs.SwingInput;
 import main.sk.pavlovsky.sokoban.object.levelActor.Box;
 import main.sk.pavlovsky.sokoban.object.levelObject.Goal;
 import main.sk.pavlovsky.sokoban.object.levelObject.Map;
@@ -11,6 +12,7 @@ import main.sk.pavlovsky.sokoban.Inputs.Direction;
 import main.sk.pavlovsky.sokoban.object.levelObject.Wall;
 import main.sk.pavlovsky.sokoban.render.LanternaRenderer;
 import main.sk.pavlovsky.sokoban.render.Renderer;
+import main.sk.pavlovsky.sokoban.render.SwingRenderer;
 
 
 import java.util.LinkedList;
@@ -18,7 +20,6 @@ import java.util.Optional;
 
 
 public class Game {
-    private Screen screen;
     Renderer renderer;
     Inputter inputter;
     private LinkedList<Map> maps;
@@ -32,8 +33,10 @@ public class Game {
     public Game(LinkedList<Map> maps) {
 
         this.maps = maps;
-        renderer = new LanternaRenderer();
-        inputter = new LanternaInput(((LanternaRenderer)renderer).getScreen());
+//        renderer = new SwingRenderer();
+//        inputter = new LanternaInput(((LanternaRenderer)renderer).getScreen());
+        renderer= new SwingRenderer();
+        inputter= new SwingInput();
     }
 
     public Map getMap(int size) {
@@ -65,7 +68,7 @@ public class Game {
                 this.running = false;
             case NEXT: {
                 if (isLevelFinished()) {
-                    this.screen.clear();
+                    this.renderer.clear();
                     this.activeMap = maps.pop();
                 }
             } break;

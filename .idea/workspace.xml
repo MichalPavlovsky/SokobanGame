@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a6b32d2-2e56-4e16-848c-71ba1c95d63e" name="Changes" comment="implements LanternaRenderer">
+    <list default="true" id="0a6b32d2-2e56-4e16-848c-71ba1c95d63e" name="Changes" comment="set renderer and inputter to Game">
+      <change afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Inputs/SwingInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/render/SwingRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/levelss.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/levelss.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LevelObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MapCreator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Inputs/LanternaInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Inputs/LanternaInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/render/LanternaRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/render/LanternaRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Move.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +52,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/MIchalPC/Desktop/sokobanUltimate-59b5bec65195167c9e8a2b18eb08a4dfdf9598d0",
+    "last_opened_file_path": "C:/Users/MIchalPC/Desktop/sokobanUltimate-e2d644e86a67c2ae8a9ce7dc0fd2607dbbbbeb9e",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.7034483",
@@ -208,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684091579448</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="set renderer and inputter to Game">
+      <created>1684151051146</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1684151051146</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -244,7 +253,8 @@
     <MESSAGE value="ymena" />
     <MESSAGE value="push interfaces" />
     <MESSAGE value="implements LanternaRenderer" />
-    <option name="LAST_COMMIT_MESSAGE" value="implements LanternaRenderer" />
+    <MESSAGE value="set renderer and inputter to Game" />
+    <option name="LAST_COMMIT_MESSAGE" value="set renderer and inputter to Game" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
