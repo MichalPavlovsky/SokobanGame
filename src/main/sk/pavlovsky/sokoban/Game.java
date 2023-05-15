@@ -1,106 +1,130 @@
 package main.sk.pavlovsky.sokoban;
 
-import com.googlecode.lanterna.TextCharacter;
-import com.googlecode.lanterna.screen.Screen;
-import main.sk.pavlovsky.sokoban.Inputs.ConsoleDirection;
-import main.sk.pavlovsky.sokoban.Inputs.WindowInput;
+import main.sk.pavlovsky.sokoban.Inputs.Inputter;
+import main.sk.pavlovsky.sokoban.Inputs.SwingInput;
 import main.sk.pavlovsky.sokoban.object.levelActor.Box;
+import main.sk.pavlovsky.sokoban.object.levelObject.Goal;
 import main.sk.pavlovsky.sokoban.object.levelObject.Map;
 import main.sk.pavlovsky.sokoban.Inputs.Direction;
 import main.sk.pavlovsky.sokoban.object.levelObject.Wall;
+import main.sk.pavlovsky.sokoban.render.Renderer;
+import main.sk.pavlovsky.sokoban.render.SwingRenderer;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.LinkedList;
 import java.util.Optional;
 
 
 public class Game {
-    private Screen screen;
-    private ArrayList<Map> maps;
-    private boolean running=false;
+    Renderer renderer;
+    Inputter inputter;
+    private LinkedList<Map> maps;
+    private boolean running = false;
     private Map activeMap;
 
-    public Game(ArrayList<Map> maps) {
-        this.maps = maps;
+    public Map getActiveMap() {
+        return activeMap;
     }
-    public Map getMap(int size){
-        if (size>maps.size()) throw new RuntimeException("Inccorect index of map");
+
+    public Game(LinkedList<Map> maps) {
+
+        this.maps = maps;
+//        renderer = new SwingRenderer();
+//        inputter = new LanternaInput(((LanternaRenderer)renderer).getScreen());
+        renderer= new SwingRenderer();
+        inputter= new SwingInput(((SwingRenderer)renderer).getFrame());
+
+    }
+
+    public Map getMap(int size) {
+        if (size > maps.size()) throw new RuntimeException("Inccorect index of map");
         return maps.get(size);
     }
-    public int number=0;
-    public void loop(){
-        while(running){
+
+
+    public void loop() {
+        while (running) {
             render();
             Direction d = input();
             update(d);
         }
     }
 
-    public void start(Screen screen){
-        this.running=true;
-        this.activeMap=maps.get(0);
-        this.screen =screen;
+    public void start() {
+        this.running = true;
+        this.activeMap = maps.pop();
+        renderer.init();
         loop();
+        renderer.deinit();
     }
 
 
     private void update(Direction direction) {
         switch (direction) {
-            case QUIT :this.running = false;
-            case NEXT: this.activeMap = maps.get(number+1);
-            case UP : move(0, -1); break;
-            case DOWN :  move(0,1); break;
-            case LEFT : move(-1,0); break;
-            case RIGHT : move(1,0); break;
-            default:break; //how to set break with expression
+            case QUIT:
+                this.running = false;
+            case NEXT: {
+                if (isLevelFinished()) {
+                    this.renderer.clear();
+                    this.activeMap = maps.pop();
+                }
+            } break;
+            case UP:
+                move(0, -1);
+                break;
+            case DOWN:
+                move(0, 1);
+                break;
+            case LEFT:
+                move(-1, 0);
+                break;
+            case RIGHT:
+                move(1, 0);
+                break;
+            default:
+                break; //how to set break with expression
         }
     }
-    private void move(int dx, int dy){
-        if (dx> 1|| dx<-1 || dy>1 || dy <-1) throw new RuntimeException("Big movement");
+
+    private void move(int dx, int dy) {
+        if (dx > 1 || dx < -1 || dy > 1 || dy < -1) throw new RuntimeException("Big movement");
         int x = this.activeMap.getPlayer().getX();
         int y = this.activeMap.getPlayer().getY();
-        if (x+dx > this.activeMap.getWidth() || y+dy > this.activeMap.getHeight() || this.activeMap.getLevelObject(x+dx, y+dy) instanceof Wall) {
+        if (x + dx > this.activeMap.getWidth() || y + dy > this.activeMap.getHeight() || this.activeMap.getLevelObject(x + dx, y + dy) instanceof Wall) {
             return;
         }
-        Optional<Box> boxOptional = this.activeMap.getBoxes().stream().filter(it -> it.getX() == x+dx && it.getY() == dy+y).findFirst();
+        Optional<Box> boxOptional = this.activeMap.getBoxes().stream().filter(it -> it.getX() == x + dx && it.getY() == dy + y).findFirst();
         if (!boxOptional.isPresent()) {
             this.activeMap.getPlayer().move(dx, dy);
+            this.activeMap.getPlayer().addSteps(1);
             return;
         }
-        if (x+2*dx > this.activeMap.getWidth()||y+2*dy> this.activeMap.getHeight() || this.activeMap.getLevelObject(x+2*dx,y+2*dy) instanceof Wall){
+        if (x + 2 * dx > this.activeMap.getWidth() || y + 2 * dy > this.activeMap.getHeight() || this.activeMap.getLevelObject(x + 2 * dx, y + 2 * dy) instanceof Wall) {
             return;
         }
-        Optional<Box> boxOptional1 = this.activeMap.getBoxes().stream().filter(it -> it.getX() == x+2*dx && it.getY() ==y+2*dy).findFirst();
+        Optional<Box> boxOptional1 = this.activeMap.getBoxes().stream().filter(it -> it.getX() == x + 2 * dx && it.getY() == y + 2 * dy).findFirst();
         if (boxOptional1.isPresent())
             return;
 
         Box box = boxOptional.get();
-        box.move(dx,dy);
-        this.activeMap.getPlayer().move(dx,dy);
+        box.move(dx, dy);
+        this.activeMap.getPlayer().move(dx, dy);
+        this.activeMap.getPlayer().addSteps(1);
     }
-    private Direction input() {
-//        return ConsoleDirection.getDirection();
-        return WindowInput.getInput(this.screen);
-    }
-    private void render() {
-        renderMap();
-        try {
-            this.screen.refresh();
-        }catch(IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException("It is not possible to render. ");
-        }
-    }
-    private void renderMap() {
-        List<String> list = activeMap.toList();
-        int xOff = 5;
-        int yOff = 5;
-        for (int y = 0; y < list.size(); y++) {
-            for (int x = 0; x < list.get(y).length(); x++) {
-                this.screen.setCharacter(x+xOff, y+yOff, new TextCharacter(list.get(y).charAt(x)));
-            }
-        }
 
+    private void render() {
+        renderer.render(this);
+    }
+
+    private Direction input() {
+        return inputter.getInput();
+    }
+
+    public boolean isLevelFinished() {
+        long onGoal = this.activeMap.getBoxes().stream()
+                .filter(it -> this.activeMap.getLevelObject(it.getX(), it.getY()) instanceof Goal).count();
+        int goals = this.activeMap.getBoxes().size();
+        return goals == onGoal;
     }
 }
+

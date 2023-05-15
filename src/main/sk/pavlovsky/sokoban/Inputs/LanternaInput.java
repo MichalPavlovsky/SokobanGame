@@ -8,11 +8,19 @@ import java.io.IOException;
 
 import static main.sk.pavlovsky.sokoban.Inputs.Direction.*;
 
-public class WindowInput {
-    public static Direction getInput(Screen screen){
-        try {
-            KeyStroke stroke = screen.readInput();
+public class LanternaInput implements Inputter{
+
+    Screen screen;
+
+    public LanternaInput(Screen screen) {
+        this.screen = screen;
+    }
+
+    public Direction getInput(){
+        try {KeyStroke stroke = screen.readInput();
+            if (stroke == null || stroke.getCharacter() == null) return NONE;
             switch (stroke.getCharacter()) {
+                case 'n': return NEXT;
                 case 'w': return UP;
                 case 's': return DOWN;
                 case 'a': return LEFT;
@@ -24,4 +32,5 @@ public class WindowInput {
             throw new RuntimeException(e);
         }
     }
+
 }

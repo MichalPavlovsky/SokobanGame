@@ -1,6 +1,6 @@
 # SokobanGame
 
-This is test game of Sokoban for educational purpose.
+This is a test game of Sokoban for educational purpose.
 
 ## Source of external files
 
