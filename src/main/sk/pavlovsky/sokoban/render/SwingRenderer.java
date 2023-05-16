@@ -12,6 +12,8 @@ import java.awt.image.BufferedImage;
 public class SwingRenderer implements Renderer{
     private JFrame frame;
     private Canvas canvas;
+
+
     private Graphics2D g;
     public SwingRenderer() {
         frame = new JFrame();
@@ -23,6 +25,7 @@ public class SwingRenderer implements Renderer{
         frame.add(canvas);
     }
 
+
     @Override
     public void init() {
         g= (Graphics2D) canvas.getGraphics().create();
@@ -31,6 +34,7 @@ public class SwingRenderer implements Renderer{
     @Override
     public void deinit() {
         g.dispose();
+        frame.dispose();
     }
 
     @Override
@@ -47,10 +51,13 @@ public class SwingRenderer implements Renderer{
             }
         }
         for (Box b:map.getBoxes()){
-            renderObject(gr, map, Color.ORANGE, b.getX(),b.getY(),size,xOff,yOff);
+            LevelObject levelObject = map.getLevelObject(b.getX(),b.getY());
+            if (levelObject instanceof Goal){
+                renderTexture(gr, map, TextureFactory.BOX_ON_GOAL, b.getX(), b.getY(),size,xOff,yOff);
+            }else renderTexture(gr,map,TextureFactory.BOX,b.getX(),b.getY(),size,xOff,yOff);
         }
         Player player = map.getPlayer();
-        renderObject(gr, map, Color.WHITE, player.getX(), player.getY(), size,xOff,yOff);
+        renderTexture(gr,map,Game.getTexturePlayer(), player.getX(), player.getY(), size,xOff,yOff);
         g.drawImage(bi,0,0,canvas);
     }
     private void renderObject(Graphics2D gr, Map map, Color color, int x, int y, int size, int xOff, int yOff){
@@ -87,6 +94,7 @@ public class SwingRenderer implements Renderer{
         gr.drawImage(image,x*size+xOff, y*size+yOff,canvas);
 
     }
+
 
     private BufferedImage getTexture(LevelObject levelObject, int size) {
         if (levelObject instanceof Empty)  {

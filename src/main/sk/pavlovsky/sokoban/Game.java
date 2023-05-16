@@ -9,8 +9,10 @@ import main.sk.pavlovsky.sokoban.Inputs.Direction;
 import main.sk.pavlovsky.sokoban.object.levelObject.Wall;
 import main.sk.pavlovsky.sokoban.render.Renderer;
 import main.sk.pavlovsky.sokoban.render.SwingRenderer;
+import main.sk.pavlovsky.sokoban.render.TextureFactory;
 
 
+import java.awt.image.BufferedImage;
 import java.util.LinkedList;
 import java.util.Optional;
 
@@ -21,6 +23,15 @@ public class Game {
     private LinkedList<Map> maps;
     private boolean running = false;
     private Map activeMap;
+    private static BufferedImage texturePlayer = TextureFactory.DOWN0;
+
+    public static BufferedImage getTexturePlayer() {
+        return texturePlayer;
+    }
+
+    public static void setTexturePlayer(BufferedImage texturePlayer) {
+        Game.texturePlayer = texturePlayer;
+    }
 
     public Map getActiveMap() {
         return activeMap;
@@ -35,12 +46,6 @@ public class Game {
         inputter= new SwingInput(((SwingRenderer)renderer).getFrame());
 
     }
-
-    public Map getMap(int size) {
-        if (size > maps.size()) throw new RuntimeException("Inccorect index of map");
-        return maps.get(size);
-    }
-
 
     public void loop() {
         while (running) {
@@ -71,15 +76,19 @@ public class Game {
             } break;
             case UP:
                 move(0, -1);
+                setTexturePlayer(TextureFactory.UP0);
                 break;
             case DOWN:
                 move(0, 1);
+                setTexturePlayer(TextureFactory.DOWN0);
                 break;
             case LEFT:
                 move(-1, 0);
+                setTexturePlayer(TextureFactory.LEFT0);
                 break;
             case RIGHT:
                 move(1, 0);
+                setTexturePlayer(TextureFactory.RIGHT0);
                 break;
             default:
                 break; //how to set break with expression

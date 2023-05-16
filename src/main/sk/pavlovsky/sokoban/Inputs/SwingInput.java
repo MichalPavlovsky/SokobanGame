@@ -1,8 +1,11 @@
 package main.sk.pavlovsky.sokoban.Inputs;
 
+import main.sk.pavlovsky.sokoban.render.TextureFactory;
+
 import javax.swing.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
 
 public class SwingInput implements Inputter{
     private Direction lastInput = Direction.NONE;
@@ -18,10 +21,15 @@ public class SwingInput implements Inputter{
                     lastInput = Direction.DOWN;
                 } else if (e.getKeyChar()=='d') {
                     lastInput = Direction.RIGHT;
+                }else if (e.getKeyChar()=='q') {
+                    lastInput = Direction.QUIT;
+                }else if (e.getKeyChar()=='n') {
+                    lastInput = Direction.NEXT;
                 }
             }
         });
     }
+
     @Override
     public Direction getInput() {
         if (lastInput!= Direction.NONE) {

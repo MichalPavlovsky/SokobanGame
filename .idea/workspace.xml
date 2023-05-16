@@ -4,27 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a6b32d2-2e56-4e16-848c-71ba1c95d63e" name="Changes" comment="prepared Textures">
-      <change afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/render/TextureFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/sprites/DOWN0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/sprites/DOWN1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/sprites/DOWN2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/sprites/LEFT0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/sprites/LEFT1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/sprites/LEFT2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/sprites/RIGHT0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/sprites/RIGHT1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/sprites/RIGHT2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/sprites/UP0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/sprites/UP1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/sprites/UP2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/sprites/box.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/sprites/boxOnGoal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/sprites/goal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/sprites/wall.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="0a6b32d2-2e56-4e16-848c-71ba1c95d63e" name="Changes" comment="add TextureFatctory and render of Textures">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Inputs/SwingInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Inputs/SwingInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/render/LanternaRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/render/LanternaRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/render/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/render/Renderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/render/SwingRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/render/SwingRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/render/TextureFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/render/TextureFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684165188964</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="add TextureFatctory and render of Textures">
+      <created>1684224844440</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1684224844440</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -306,7 +300,8 @@
     <MESSAGE value="Canvas input handle" />
     <MESSAGE value="new method renderObject" />
     <MESSAGE value="prepared Textures" />
-    <option name="LAST_COMMIT_MESSAGE" value="prepared Textures" />
+    <MESSAGE value="add TextureFatctory and render of Textures" />
+    <option name="LAST_COMMIT_MESSAGE" value="add TextureFatctory and render of Textures" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
