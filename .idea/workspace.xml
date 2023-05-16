@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a6b32d2-2e56-4e16-848c-71ba1c95d63e" name="Changes" comment="new method renderObject">
+    <list default="true" id="0a6b32d2-2e56-4e16-848c-71ba1c95d63e" name="Changes" comment="prepared Textures">
+      <change afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/render/TextureFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/sprites/DOWN0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/sprites/DOWN1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/sprites/DOWN2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/sprites/LEFT0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/sprites/LEFT1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/sprites/LEFT2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/sprites/RIGHT0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/sprites/RIGHT1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/sprites/RIGHT2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/sprites/UP0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/sprites/UP1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/sprites/UP2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/sprites/box.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/sprites/boxOnGoal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/sprites/goal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/sprites/wall.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/render/SwingRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/render/SwingRenderer.java" afterDir="false" />
     </list>
@@ -50,15 +68,15 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.7034483",
-    "settings.editor.selected.configurable": "vcs.Git"
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Program Files\Projekty\Sokoban\src" />
       <recent name="C:\Program Files\Projekty\Sokoban\src\main" />
       <recent name="C:\Program Files\Projekty\Sokoban\src\main\resources" />
       <recent name="C:\Program Files\Projekty\Sokoban\src\main\sk\pavlovsky\sokoban" />
-      <recent name="C:\Program Files\Projekty\Sokoban\src" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -239,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684163533190</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="prepared Textures">
+      <created>1684165188964</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1684165188964</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -280,7 +305,8 @@
     <MESSAGE value="first Canvas" />
     <MESSAGE value="Canvas input handle" />
     <MESSAGE value="new method renderObject" />
-    <option name="LAST_COMMIT_MESSAGE" value="new method renderObject" />
+    <MESSAGE value="prepared Textures" />
+    <option name="LAST_COMMIT_MESSAGE" value="prepared Textures" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

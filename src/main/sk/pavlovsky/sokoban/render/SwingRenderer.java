@@ -43,7 +43,7 @@ public class SwingRenderer implements Renderer{
         int yOff= 0;
         for (int y = 0; y < map.getHeight(); y++) {
             for (int x = 0; x < map.getWidth(); x++) {
-                renderObject(gr, map, getColor(map.getLevelObject(x,y)), x,y,size,xOff,yOff);
+                renderTexture(gr, map, getTexture(map.getLevelObject(x,y),size),x,y,size,xOff,yOff);
             }
         }
         for (Box b:map.getBoxes()){
@@ -57,10 +57,11 @@ public class SwingRenderer implements Renderer{
         gr.setColor(color);
         gr.fillRect(x*size+xOff, y*size+yOff,size,size);
         LevelObject levelObject = map.getLevelObject(x,y);
-        if (levelObject instanceof Goal) {
-            gr.setColor(getColor(levelObject));
-            gr.fillRect(x*size+xOff+5,y*size+yOff+5, size - 10 ,size -10);
-        }
+//        if (levelObject instanceof Goal) {
+//            gr.setColor(getColor(levelObject));
+//            gr.fillRect(x*size+xOff+5,y*size+yOff+5, size-10  ,size-10 );
+//
+//        }
     }
 
     @Override
@@ -80,5 +81,21 @@ public class SwingRenderer implements Renderer{
 
     public JFrame getFrame() {
         return frame;
+    }
+
+    private void renderTexture(Graphics2D gr, Map map, BufferedImage image, int x, int y, int size, int xOff, int yOff) {
+        gr.drawImage(image,x*size+xOff, y*size+yOff,canvas);
+
+    }
+
+    private BufferedImage getTexture(LevelObject levelObject, int size) {
+        if (levelObject instanceof Empty)  {
+            return new BufferedImage(size, size, BufferedImage.TYPE_INT_RGB);
+        }else if (levelObject instanceof Goal) {
+            return TextureFactory.GOAL;
+        }else if (levelObject instanceof Wall) {
+            return TextureFactory.WALL;
+        }
+        throw new RuntimeException("There is no such Level Object defined");
     }
 }
