@@ -57,7 +57,7 @@ public class SwingRenderer implements Renderer{
             }else renderTexture(gr,map,TextureFactory.BOX,b.getX(),b.getY(),size,xOff,yOff);
         }
         Player player = map.getPlayer();
-        renderTexture(gr,map,Game.getTexturePlayer(), player.getX(), player.getY(), size,xOff,yOff);
+        renderTexture(gr,map,player.getTexture(), player.getX(), player.getY(), size,xOff,yOff);
         g.drawImage(bi,0,0,canvas);
     }
     private void renderObject(Graphics2D gr, Map map, Color color, int x, int y, int size, int xOff, int yOff){

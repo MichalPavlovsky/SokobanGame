@@ -76,19 +76,19 @@ public class Game {
             } break;
             case UP:
                 move(0, -1);
-                setTexturePlayer(TextureFactory.UP0);
+                this.activeMap.getPlayer().setTexture(TextureFactory.UP0);
                 break;
             case DOWN:
                 move(0, 1);
-                setTexturePlayer(TextureFactory.DOWN0);
+                this.activeMap.getPlayer().setTexture(TextureFactory.DOWN0);
                 break;
             case LEFT:
                 move(-1, 0);
-                setTexturePlayer(TextureFactory.LEFT0);
+                this.activeMap.getPlayer().setTexture(TextureFactory.LEFT0);
                 break;
             case RIGHT:
                 move(1, 0);
-                setTexturePlayer(TextureFactory.RIGHT0);
+                this.activeMap.getPlayer().setTexture(TextureFactory.RIGHT0);
                 break;
             default:
                 break; //how to set break with expression
