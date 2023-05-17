@@ -14,6 +14,15 @@ public class Player extends LevelActor {
     public void setTexture(BufferedImage texture) {
         this.texture = texture;
     }
+    private int viac=0;
+
+    public int getViac() {
+        return viac;
+    }
+
+    public void setViac(int viac) {
+        this.viac = viac+getViac();
+    }
 
     private BufferedImage texture= TextureFactory.DOWN0;
 

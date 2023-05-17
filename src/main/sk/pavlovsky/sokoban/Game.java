@@ -13,6 +13,8 @@ import main.sk.pavlovsky.sokoban.render.TextureFactory;
 
 
 import java.awt.image.BufferedImage;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.LinkedList;
 import java.util.Optional;
 
@@ -20,14 +22,24 @@ import java.util.Optional;
 public class Game {
     Renderer renderer;
     Inputter inputter;
+    Instant lastloop;
     private LinkedList<Map> maps;
     private boolean running = false;
     private Map activeMap;
     private static BufferedImage texturePlayer = TextureFactory.DOWN0;
 
-    public static BufferedImage getTexturePlayer() {
-        return texturePlayer;
+    public boolean isMoveRender() {
+        return moveRender;
     }
+
+    public void setMoveRender(boolean moveRender) {
+        this.moveRender = moveRender;
+    }
+
+    private boolean moveRender=false;
+
+    private static final int FPS = 15;
+    private static final int REFRESH= 1000/FPS;
 
     public static void setTexturePlayer(BufferedImage texturePlayer) {
         Game.texturePlayer = texturePlayer;
@@ -44,11 +56,19 @@ public class Game {
 //        inputter = new LanternaInput(((LanternaRenderer)renderer).getScreen());
         renderer= new SwingRenderer();
         inputter= new SwingInput(((SwingRenderer)renderer).getFrame());
+        this.lastloop = Instant.now();
 
     }
 
     public void loop() {
         while (running) {
+            while (isMoveRender()) {
+                Instant now = Instant.now();
+                long delta = Duration.between(lastloop,now).toMillis();
+                if (delta>REFRESH){
+                    render();
+                    this.lastloop=now;}
+            }
             render();
             Direction d = input();
             update(d);
@@ -106,6 +126,7 @@ public class Game {
         if (!boxOptional.isPresent()) {
             this.activeMap.getPlayer().move(dx, dy);
             this.activeMap.getPlayer().addSteps(1);
+            setMoveRender(true);
             return;
         }
         if (x + 2 * dx > this.activeMap.getWidth() || y + 2 * dy > this.activeMap.getHeight() || this.activeMap.getLevelObject(x + 2 * dx, y + 2 * dy) instanceof Wall) {
@@ -119,6 +140,7 @@ public class Game {
         box.move(dx, dy);
         this.activeMap.getPlayer().move(dx, dy);
         this.activeMap.getPlayer().addSteps(1);
+        setMoveRender(true);
     }
 
     private void render() {
