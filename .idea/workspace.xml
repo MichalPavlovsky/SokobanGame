@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a6b32d2-2e56-4e16-848c-71ba1c95d63e" name="Changes" comment="repair Texture of player">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="0a6b32d2-2e56-4e16-848c-71ba1c95d63e" name="Changes" comment="first animations Player">
+      <change afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Inputs/View.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/object/levelActor/LevelActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/object/levelActor/LevelActor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/object/levelActor/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/object/levelActor/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/render/SwingRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/render/SwingRenderer.java" afterDir="false" />
     </list>
@@ -271,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684245762621</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="first animations Player">
+      <created>1684343291144</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1684343291144</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -316,7 +322,8 @@
     <MESSAGE value="add TextureFatctory and render of Textures" />
     <MESSAGE value="change move with Player" />
     <MESSAGE value="repair Texture of player" />
-    <option name="LAST_COMMIT_MESSAGE" value="repair Texture of player" />
+    <MESSAGE value="first animations Player" />
+    <option name="LAST_COMMIT_MESSAGE" value="first animations Player" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

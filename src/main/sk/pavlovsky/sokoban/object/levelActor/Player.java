@@ -14,15 +14,6 @@ public class Player extends LevelActor {
     public void setTexture(BufferedImage texture) {
         this.texture = texture;
     }
-    private int viac=0;
-
-    public int getViac() {
-        return viac;
-    }
-
-    public void setViac(int viac) {
-        this.viac = viac+getViac();
-    }
 
     private BufferedImage texture= TextureFactory.DOWN0;
 
@@ -33,14 +24,53 @@ public class Player extends LevelActor {
         steps+=d;
     }
 
+    private int XBOff = -1;
+    private int YBOff = -1;
+
+    public int getXBOff() {
+        return XBOff;
+    }
+
+    public void setXBOff(int XBOff) {
+        this.XBOff = XBOff;
+    }
+
+    public int getYBOff() {
+        return YBOff;
+    }
+
+    public void setYBOff(int YBOff) {
+        this.YBOff = YBOff;
+    }
+
+    private int xOff=0;
+    private int yOff = 0;
+
+    public int getXOff() {
+        return xOff;
+    }
+    public void setXOff(int xOff) {
+        this.xOff = xOff+ getXOff();
+    }
+    public void setXOff2(int xOff) {
+        this.xOff = xOff;
+    }
+    public int getYOff() {
+        return yOff;
+    }
+    public void setYOff(int yOff) {
+        this.yOff = yOff+ getYOff();
+    }
+    public void setyOff2(int yOff2) {
+        this.yOff = yOff2;
+    }
+
     @Override
     public void move(int dx, int dy) {
-
         super.move(dx, dy);
     }
 
     public Player(int x, int y) {
-
         super(x, y);
     }
 
