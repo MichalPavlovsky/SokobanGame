@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a6b32d2-2e56-4e16-848c-71ba1c95d63e" name="Changes" comment="first animations Player">
-      <change afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Inputs/View.java" afterDir="false" />
+    <list default="true" id="0a6b32d2-2e56-4e16-848c-71ba1c95d63e" name="Changes" comment="animation Player with Box">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/object/levelActor/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/object/levelActor/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/render/SwingRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/render/SwingRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Inputs/LanternaInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sk/pavlovsky/sokoban/Inputs/LanternaInput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684343291144</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="animation Player with Box">
+      <created>1684418747925</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1684418747925</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -298,7 +303,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Vypisanie levelu" />
     <MESSAGE value="Prvy tah po inpute" />
     <MESSAGE value="Pridany enum, abstract, metody move" />
     <MESSAGE value="Render level from File to console" />
@@ -323,7 +327,8 @@
     <MESSAGE value="change move with Player" />
     <MESSAGE value="repair Texture of player" />
     <MESSAGE value="first animations Player" />
-    <option name="LAST_COMMIT_MESSAGE" value="first animations Player" />
+    <MESSAGE value="animation Player with Box" />
+    <option name="LAST_COMMIT_MESSAGE" value="animation Player with Box" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

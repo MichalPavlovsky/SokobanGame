@@ -2,8 +2,6 @@ package main.sk.pavlovsky.sokoban.Inputs;
 
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.input.KeyStroke;
-
-
 import java.io.IOException;
 
 import static main.sk.pavlovsky.sokoban.Inputs.Direction.*;

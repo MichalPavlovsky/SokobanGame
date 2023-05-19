@@ -23,6 +23,7 @@ import java.util.Optional;
 
 import static main.sk.pavlovsky.sokoban.Inputs.View.*;
 import static main.sk.pavlovsky.sokoban.Inputs.View.UPP;
+import static main.sk.pavlovsky.sokoban.render.TextureFactory.*;
 
 
 public class Game {
@@ -30,6 +31,11 @@ public class Game {
     Inputter inputter;
     Instant lastloop;
     private View view=View.DOWNN;
+
+    private LinkedList<BufferedImage> skinUp;
+    private LinkedList<BufferedImage> skinDown;
+    private LinkedList<BufferedImage> skinLeft;
+    private LinkedList<BufferedImage> skinRight;
 
     public View getView() {
         return view;
@@ -42,7 +48,6 @@ public class Game {
     private LinkedList<Map> maps;
     private boolean running = false;
     private Map activeMap;
-    private static BufferedImage texturePlayer = TextureFactory.DOWN0;
 
     public boolean isMovePlayer() {
         return movePlayer;
@@ -63,12 +68,10 @@ public class Game {
         this.moveBox = moveBox;
     }
 
-    private static final int FPS = 15;
+    private static final int FPS = 30;
     private static final int REFRESH= 1000/FPS;
 
-    public static void setTexturePlayer(BufferedImage texturePlayer) {
-        Game.texturePlayer = texturePlayer;
-    }
+
 
     public Map getActiveMap() {
         return activeMap;
@@ -82,7 +85,10 @@ public class Game {
         renderer= new SwingRenderer();
         inputter= new SwingInput(((SwingRenderer)renderer).getFrame());
         this.lastloop = Instant.now();
-
+        this.skinUp = new LinkedList<>();
+        this.skinDown= new LinkedList<>();
+        this.skinLeft = new LinkedList<>();
+        this.skinRight = new LinkedList<>();
     }
 
     public void loop() {
@@ -90,6 +96,7 @@ public class Game {
             while (isMovePlayer()) {
                 Instant now = Instant.now();
                 long delta = Duration.between(lastloop,now).toMillis();
+                checkList();
                 if (delta>REFRESH){
                     moveOff(getView());
                     render();
@@ -123,32 +130,33 @@ public class Game {
             case UP:
                 move(0, -1);
                 this.setView(View.UPP);
-                this.activeMap.getPlayer().setTexture(TextureFactory.UP0);
                 break;
             case DOWN:
                 move(0, 1);
                 this.setView(View.DOWNN);
-                this.activeMap.getPlayer().setTexture(TextureFactory.DOWN0);
                 break;
             case LEFT:
                 move(-1, 0);
                 this.setView(View.LEFTT);
-                this.activeMap.getPlayer().setTexture(TextureFactory.LEFT0);
                 break;
             case RIGHT:
                 move(1, 0);
                 this.setView(View.RIGHTT);
-                this.activeMap.getPlayer().setTexture(TextureFactory.RIGHT0);
                 break;
             default:
-                break; //how to set break with expression
+                break;
         }
     }
     private void moveOff(View view) {
         Player getP=this.activeMap.getPlayer();
+        int xo=getP.getXOff();
+        int yo=getP.getYOff();
         if (view== LEFTT) {
             if (getP.getXOff()>-64) {
                 getP.setXOff(-4);
+                if (xo==0||xo==-16||xo==-32||xo==-48){
+                    getP.setTexture(this.skinLeft.pop());
+                }
             }else {setMovePlayer(false);
             setMoveBox(false);
             getP.setXOff2(0);
@@ -157,6 +165,8 @@ public class Game {
         }else if (view== RIGHTT) {
             if (getP.getXOff()<64) {
                 getP.setXOff(4);
+                if (xo==0||xo==16||xo==32||xo==48){
+                    getP.setTexture(this.skinRight.pop());}
             }else {setMovePlayer(false);
             setMoveBox(false);
             getP.setXOff2(0);
@@ -165,6 +175,8 @@ public class Game {
         }else if (view== DOWNN) {
             if (getP.getYOff()<64) {
                 getP.setYOff(4);
+                if (yo==0||yo==16||yo==32||yo==48){
+                    getP.setTexture(this.skinDown.pop());}
             }else {setMovePlayer(false);
             setMoveBox(false);
             getP.setyOff2(0);
@@ -173,6 +185,8 @@ public class Game {
         }else if (view== UPP) {
             if (getP.getYOff()>-64) {
                 getP.setYOff(-4);
+                if (yo==0||yo==-16||yo==-32||yo==-48){
+                    getP.setTexture(this.skinUp.pop());}
             }else {setMovePlayer(false);
             setMoveBox(false);
             getP.setyOff2(0);
@@ -224,6 +238,41 @@ public class Game {
                 .filter(it -> this.activeMap.getLevelObject(it.getX(), it.getY()) instanceof Goal).count();
         int goals = this.activeMap.getBoxes().size();
         return goals == onGoal;
+    }
+    private void checkList(){
+        if (skinUp.isEmpty()){
+            setListSkinUp();
+        }
+        if (skinRight.isEmpty()){
+            setListSkinRight();
+        }
+        if (skinLeft.isEmpty()){
+            setListSkinLeft();
+        }
+        if (skinDown.isEmpty()){
+            setListSkinDown();
+        }
+    }
+    private void setListSkinRight(){
+        this.skinRight.add(RIGHT0);
+        this.skinRight.add(RIGHT1);
+        this.skinRight.add(RIGHT0);
+        this.skinRight.add(RIGHT2);}
+    private void setListSkinUp(){
+        this.skinUp.add(UP0);
+        this.skinUp.add(UP1);
+        this.skinUp.add(UP0);
+        this.skinUp.add(UP2);}
+    private void setListSkinLeft(){
+        this.skinLeft.add(LEFT0);
+        this.skinLeft.add(LEFT1);
+        this.skinLeft.add(LEFT0);
+        this.skinLeft.add(LEFT2);}
+    private void setListSkinDown(){
+        this.skinDown.add(DOWN0);
+        this.skinDown.add(DOWN1);
+        this.skinDown.add(DOWN0);
+        this.skinDown.add(DOWN2);
     }
 }
 
